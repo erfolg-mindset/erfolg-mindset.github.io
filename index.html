@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <style>
+
+            body{
+                background-color: #222;
+            }
+
+            .categories {
+                margin-top:60px;
+                height: auto;
+                background: #222;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                flex-flow: wrap;
+            }
+
+            .categorie-image {
+                width:500px;
+            }
+
+            .categorie {
+                width:500px;
+            }
+
+            @media (max-width:500px) {
+                .brand-title {
+                    font-size:40px;
+                }
+
+                .background {
+                    display:none;
+                }
+                
+                .categories {
+                    width: 100%;
+                    padding:20px;
+                    margin-top:20px;
+                }
+
+                .categorie-image {
+                    width:100%;
+                }
+
+                .categorie {
+                    width:100%;
+                }
+               
+
+                
+                }
+            }
+                
+        </style>
+    </head>
+    <body>
+     
+
+
+        <!--navigation-bar-->
+        <nav class="navbar"</nav>
+            <div class="brand-title">Erfolg-Mindset.de</div>
+                <a href="#" class="toggle-button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            <div class="navbar-links">
+                <ul>
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="lifestyle.html">Lifestyle</a></li>
+                    <li><a href="buecher.html">Bücher</a></li>
+                    <li><a href="newsletter.html">Newsletter</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--navigation-bar-->
+
+        <!--slider-->
+        <div id="background" class="background" style="height:721px; justify-content: space-between; background-image:url('images/erfolg02.jpg')">
+
+            <div style="height:360px;"></div>
+
+            <div style="display:flex; justify-content: space-between;">
+
+                <input style="width:159px; height:50px; font-size:40px; color: #eee; background-color: #222; float:left;" type="button" id="button-left" value="&#8592;"></input>
+                
+                <div id="preview" style="width:800px; background-color: rgba(32,32,32,0.6); padding: 20px;">
+                    <h2 id=header>
+                        Erfolg-Mindset.de
+                    </h2>
+                    <p id="description">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+
+                <input style="width:150px; height:50px; font-size:40px; color: #eee; background-color: #222; float:right;" type="button" id="button-right" value="&#8594;"></input>
+
+            </div>
+    
+        <script>
+            "use strict";
+            var click1=0;
+            var click2=0;
+            var slide=0;
+
+            function slideleft() {
+                click1=click2+1;
+                slide=click1%4;
+                if (slide==0) {
+                    document.getElementById("background").style.backgroundImage = "url('images/erfolg02.jpg')"; 
+                    document.getElementById("header").innerHTML = ("Erfolg-Mindset.de");
+                    document.getElementById("description").innerHTML = ("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
+                }
+                if (slide==1) {
+                    document.getElementById("background").style.backgroundImage = "url('images/email02.jpg')"; 
+                    document.getElementById("header").innerHTML = ("Newsletter");
+                    document.getElementById("description").innerHTML = ("Nimm dir einen Moment Zeit und schriebe dich in unserem kostenlosen Newsletter ein. Du bleibst so immer auf dem neuesten Stand zu unseren Beiträgen zum Thema Persönlichkeitsentwicklung, sowie unseren Rezensionen zu empfehlenswerten Büchern. Deine Daten sind bei uns sicher und du kannst dich selbstverständlich jederzeit wieder aus dem Newsletter ausschreiben. ");
+                }
+                if (slide==2) {
+                    document.getElementById("background").style.backgroundImage = "url('images/buecher02.jpg')"; 
+                    document.getElementById("header").innerHTML = ("Bücher");
+                    document.getElementById("description").innerHTML = ("Unser Gehirn ist nicht nur extrem leistungsfähig, sondern auch flexibel: Dementsprechend sollten wir es stetig mit neuem Wissen füttern, wie man auch einen PC stets mit neuer Software ausstattet. Regelmäßiges Lesen ist eine gute Gewohnheit, die auch die meisten reichen und/oder erfolgreichen Menschen pflegen. Lies dir daher unsere Rezensionen zu den wichtigsten Büchern zum Thema Persönlichkeitsentwicklung und Erfolg durch. ");
+                }
+                if (slide==3) {
+                    document.getElementById("background").style.backgroundImage = "url('images/lifestyle02.jpg')"; 
+                    document.getElementById("header").innerHTML = ("Lifestyle");
+                    document.getElementById("description").innerHTML = ("Es gilt die 21/90 Tage Regel: Es braucht 21 Tage um eine Gewohnheit aufzubauen und es braucht 90 Tage, um daraus einen Lifestyle zu entwickeln. Wir sollten daher stets auf unsere Gewohnheiten achten und sie pflegen, wir sind nämlich das Ergebnis unserer Gewohnheiten. Wenn du also wissen willst, wie du so wie die reichen und/oder erfolgreichen Menschen dieser Erde leben kannst, lies dir unsere Beiträge zum Thema Lifestyle durch: ");
+                }
+               click2=click1;
+            }
+            document.getElementById("button-left").onclick = slideleft;
+
+
+
+            function slideright() {
+                click1=click2+1;
+                slide=click1%4;
+                if (slide==0) {
+                    document.getElementById("background").style.backgroundImage = "url('images/lifestyle02.jpg')"; 
+                    document.getElementById("header").innerHTML = ("Lifestyle");
+                    document.getElementById("description").innerHTML = ("Es gilt die 21/90 Tage Regel: Es braucht 21 Tage um eine Gewohnheit aufzubauen und es braucht 90 Tage, um daraus einen Lifestyle zu entwickeln. Wir sollten daher stets auf unsere Gewohnheiten achten und sie pflegen, wir sind nämlich das Ergebnis unserer Gewohnheiten. Wenn du also wissen willst, wie du so wie die reichen und/oder erfolgreichen Menschen dieser Erde leben kannst, lies dir unsere Beiträge zum Thema Lifestyle durch: ");
+                }
+                if (slide==1) {
+                    document.getElementById("background").style.backgroundImage = "url('images/buecher02.jpg')"; 
+                    document.getElementById("header").innerHTML = ("Bücher");
+                    document.getElementById("description").innerHTML = ("Unser Gehirn ist nicht nur extrem leistungsfähig, sondern auch flexibel: Dementsprechend sollten wir es stetig mit neuem Wissen füttern, wie man auch einen PC stets mit neuer Software ausstattet. Regelmäßiges Lesen ist eine gute Gewohnheit, die auch die meisten reichen und/oder erfolgreichen Menschen pflegen. Lies dir daher unsere Rezensionen zu den wichtigsten Büchern zum Thema Persönlichkeitsentwicklung und Erfolg durch. ");
+                }
+                if (slide==2) {
+                    document.getElementById("background").style.backgroundImage = "url('images/email02.jpg')"; 
+                    document.getElementById("header").innerHTML = ("Newsletter");
+                    document.getElementById("description").innerHTML = ("Nimm dir einen Moment Zeit und schriebe dich in unserem kostenlosen Newsletter ein. Du bleibst so immer auf dem neuesten Stand zu unseren Beiträgen zum Thema Persönlichkeitsentwicklung, sowie unseren Rezensionen zu empfehlenswerten Büchern. Deine Daten sind bei uns sicher und du kannst dich selbstverständlich jederzeit wieder aus dem Newsletter ausschreiben. ");
+                }
+                if (slide==3) {
+                    document.getElementById("background").style.backgroundImage = "url('images/erfolg02.jpg')"; 
+                    document.getElementById("header").innerHTML = ("Erfolg-Mindset.de");
+                    document.getElementById("description").innerHTML = ("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
+                }
+                click2=click1;
+            }
+            document.getElementById("button-right").onclick = slideright;
+
+        </script>
+
+        </div>
+        <!--slider-->
+
+        <div class="categories">
+            <div class="categorie" style="margin:0px; padding:0px;">
+                <img class="categorie-image" src="images/lifestyle.jpg" style="opacity:0.8; display:flex; float:rigth; color:black;">
+                <h2 id=header style="color:#eee">
+                    Lifestyle
+                </h2>
+                <p class="description" id="description" style=" color:#eee;">
+                    Es gilt die 21/90 Tage Regel: Es braucht 21 Tage um eine Gewohnheit aufzubauen und es braucht 90 Tage, um daraus einen Lifestyle zu entwickeln. Wir sollten daher stets auf unsere Gewohnheiten achten und sie pflegen, wir sind nämlich das Ergebnis unserer Gewohnheiten. Wenn du also wissen willst, wie du so wie die reichen und/oder erfolgreichen Menschen dieser Erde leben kannst, lies dir unsere Beiträge zum Thema Lifestyle durch: 
+                </p>
+            </div>
+            <div class="categorie">
+                <img class="categorie-image" src="images/buecher.jpg" style="opacity:0.8; display:flex;">
+                <h2 id=header style="color:#eee;">
+                    Bücher
+                </h2>
+                <p class="description" id="description" style="color:#eee;">
+                    Unser Gehirn ist nicht nur extrem leistungsfähig, sondern auch flexibel: Dementsprechend sollten wir es stetig mit neuem Wissen füttern, wie man auch einen PC stets mit neuer Software ausstattet. Regelmäßiges Lesen ist eine gute Gewohnheit, die auch die meisten reichen und/oder erfolgreichen Menschen pflegen. Lies dir daher unsere Rezensionen zu den wichtigsten Büchern zum Thema Persönlichkeitsentwicklung und Erfolg durch: 
+                </p>
+            </div>
+            <div class="categorie">
+                <img class="categorie-image" src="images/email.jpg" style="opacity:0.8; display:flex; float:rigth; color:black;">
+                <h2 id=header style="color:#eee">
+                    Newsletter
+                </h2>
+                <p class="description" id="description" style="color:#eee;">
+                    Nimm dir einen Moment Zeit und schriebe dich in unserem kostenlosen Newsletter ein. Du bleibst so immer auf dem neuesten Stand zu unseren Beiträgen zum Thema Persönlichkeitsentwicklung, sowie unseren Rezensionen zu empfehlenswerten Büchern. Deine Daten sind bei uns sicher und du kannst dich selbstverständlich jederzeit wieder aus dem Newsletter ausschreiben. 
+                </p>
+            </div>
+        </div>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
