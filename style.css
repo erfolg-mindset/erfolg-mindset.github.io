@@ -98,8 +98,11 @@ body {
 }
 /*navbar*/
 
-
-
+/*header*/
+.header-image {
+    height:721px;
+}
+/*header*/
 
 /*frame*/
 .frame {background-color: #eee;}
@@ -243,6 +246,10 @@ p.text4 {
     aside {
         display: none;
     }
+
+    .header-image {
+        height:auto;
+    }
 }
 
 @media (max-width: 500px) {
@@ -260,6 +267,10 @@ p.text4 {
 
     list {
         margin-right:0px;
+    }
+
+    .header-image {
+        height:auto;
     }
 
 }
